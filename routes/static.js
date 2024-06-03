@@ -8,4 +8,8 @@ router.get("/", async (req, res) => {
     urls: allUrls,
   });
 });
+
+router.get("/signup", async (req,res) => {
+  return res.render("signup");
+})
 export default router;

@@ -1,9 +1,9 @@
 import express from "express";
 import urlRouter from "./routes/url.js";
 import staticRouter from "./routes/static.js";
+import userRouter from "./routes/user.js";
 import { connectMongoDB } from "./connect.js";
 import path from "path";
-import { URL } from "./models/url.js";
 
 const app = express();
 const PORT = 8001;
@@ -20,5 +20,6 @@ app.set("views", path.resolve("./views"));
 
 app.use("/url", urlRouter);
 app.use("/", staticRouter);
+app.use("/user", userRouter);
 
 app.listen(PORT, () => console.log(`Server started at PORT: ${PORT}`));
